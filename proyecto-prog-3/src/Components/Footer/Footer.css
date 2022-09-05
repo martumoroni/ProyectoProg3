@@ -1,0 +1,29 @@
+.footer{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    background-color: #000000;
+    padding: 20px 0;
+    margin-top: 80px;
+    color: white;
+    margin: auto;
+    width: 100%;
+    font-family: 'Arial', sans-serif;
+        font-size: 25px;
+}
+.nombresequipo{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+.nombresequipo li{
+    margin:0 1vh;
+    align-self: center;
+}
+.udesalogo{
+    justify-content: center;
+    width: 50%;
+}
+.digitalhouselogo{
+    width: 150px;
+}
