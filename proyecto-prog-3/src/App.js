@@ -1,8 +1,15 @@
 import React from 'react';
+import Footer from './Components/Footer/Footer';
 
 function App() {
   return (
-   <div> Hola funciona? </div>
+    <div>
+      
+    
+
+      <Footer />
+      
+    </div>
   );
 }
 
