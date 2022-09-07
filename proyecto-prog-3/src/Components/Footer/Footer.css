@@ -3,19 +3,19 @@
     justify-content: center;
     flex-direction: row;
     background-color: #00c8ff;
-    padding: 20px 0;
-    margin-top: 80px;
+    padding: 50px 0;
+    margin-top: 50px;
     color: white;
     margin: auto;
     width: 100%;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    margin-bottom: 100px;
     font-size: 20px;
 }
 .nombresequipo{
     display: flex;
     flex-direction: row;
     list-style: none;
+    padding: 5%;
 }
 .nombresequipo li{
     margin:0 1vh;

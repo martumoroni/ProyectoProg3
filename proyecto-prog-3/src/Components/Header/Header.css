@@ -3,7 +3,30 @@
     font-weight: bolder;
     text-align: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    margin-bottom: 100px;
-    margin-top: 20px;
+    background-color: #00c8ff;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    padding: 50px 0;
+}
+.imovieslogo{
+    display: flex;
+    width: 10%;
+    height: 100%;
+    text-align: center;
+    
+}
 
+.footer{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    background-color: #00c8ff;
+    padding: 50px 0;
+    margin-top: 50px;
+    color: white;
+    margin: auto;
+    width: 100%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
 }
