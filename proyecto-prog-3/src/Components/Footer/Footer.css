@@ -8,8 +8,9 @@
     color: white;
     margin: auto;
     width: 100%;
-    font-family: 'Arial', sans-serif;
-        font-size: 25px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-bottom: 100px;
+    font-size: 20px;
 }
 .nombresequipo{
     display: flex;
@@ -20,3 +21,22 @@
     margin:0 1vh;
     align-self: center;
 }
+.digitahouselogo{
+    display: flex;
+    padding: 10px;
+    margin: auto;
+    width: 20%;
+    height: 30%;
+   
+}
+.udesalogo{
+    display: flex;
+    padding: 10px;
+    margin: auto;
+    width: 20%;
+    height: auto;
+    
+}
+
+
+
