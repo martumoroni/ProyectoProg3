@@ -22,6 +22,7 @@ body {
     font-size: 11px;
     padding: 0;
     border: white;
+    text-align: center;
 }
 
 .card-container img{
