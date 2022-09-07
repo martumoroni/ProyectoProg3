@@ -6,7 +6,7 @@ function Header() {
         
         <header className="header">  
             <div>
-            HEADER
+            IMovies
             </div>
         </header>
 

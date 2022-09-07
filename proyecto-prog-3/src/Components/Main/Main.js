@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import PeliculaCard from "../PeliculaCard/PeliculaCard";
 import SerieCard from "../SerieCard/SerieCard";
+import "./Main.css"
+
 
 class Main extends Component {
     constructor(props) {
@@ -35,7 +37,7 @@ class Main extends Component {
 
             <React.Fragment> 
                
-                <div>
+                <div className="titulo-container">
                     <h2 className="Titulo">Peliculas</h2>
                 </div>
                 <section className='card-container'>
@@ -44,7 +46,7 @@ class Main extends Component {
 
 
 
-                <div>
+                <div className="titulo-container">
                     <h2 className="Titulo">Series</h2>
                 </div>
                 <section className='card-container'>

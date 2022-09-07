@@ -1,4 +1,6 @@
 import React, {Component} from "react";
+import "./SerieCard.css"
+import "../Main/Main.css"
 
 class  SerieCard extends Component{
     constructor(props){
@@ -10,9 +12,9 @@ class  SerieCard extends Component{
 
     render(){
         return(
-        <article className='serie-card'>
-            <h2>{this.props.title}</h2>  
+        <article className='card-container-hijo'>
             <img src={`https://image.tmdb.org/t/p/w342/${this.props.image}`} alt=""/>
+            <h2>{this.props.title}</h2> 
             <p className='more'>Ver más</p>               
         </article>
            
