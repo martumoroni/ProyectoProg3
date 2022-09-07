@@ -25,16 +25,16 @@
     display: flex;
     padding: 10px;
     margin: auto;
-    width: 20%;
-    height: 30%;
+    width: auto;
+    height: 50%;
    
 }
 .udesalogo{
     display: flex;
     padding: 10px;
     margin: auto;
-    width: 20%;
-    height: auto;
+    width: auto;
+    height: 50%;
     
 }
 
