@@ -38,7 +38,7 @@ class Main extends Component {
             <React.Fragment> 
                
                 <div className="titulo-container">
-                    <h2 className="Titulo">Peliculas</h2>
+                    <h2 className="Titulo"> Mejores Peliculas</h2>
                 </div>
                 <section className='card-container'>
                     {this.state.dataPelicula.map((unPelicula, idx )=> <PeliculaCard key={unPelicula + idx} data={unPelicula}  image={unPelicula.poster_path} title={unPelicula.title}/>)}
@@ -47,7 +47,7 @@ class Main extends Component {
 
 
                 <div className="titulo-container">
-                    <h2 className="Titulo">Series</h2>
+                    <h2 className="Titulo">Mejores Series</h2>
                 </div>
                 <section className='card-container'>
                     {this.state.dataSeries.map((unSeries, idx )=> <SerieCard key={unSeries + idx} data={unSeries}  image={unSeries.poster_path} title={unSeries.name}/>)}

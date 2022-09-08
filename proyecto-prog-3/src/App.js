@@ -2,7 +2,7 @@ import React from 'react';
 import Footer from './Components/Footer/Footer';
 import Header from './Components/Header/Header';
 import Main from './Components/Main/Main'
-//import { BrowserRouter, Route, Routes, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Switch } from "react-router-dom";
 
 
 /*import PeliculaCard from './Components/PeliculaCard/PeliculaCard';
@@ -13,7 +13,9 @@ return(
   <React.Fragment>
 
     <Header/>
-    <Main/>
+    <Switch>
+ <Route path='/' component={Main} />
+ </Switch>
     <Footer/>
   </React.Fragment>
 )
