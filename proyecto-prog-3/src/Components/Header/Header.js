@@ -5,7 +5,9 @@ function Header() {
     return (
         
         <header className="header">  
-        <div><img className='imovieslogo' src='../img/imovies.jpeg' alt="imovie"/></div>
+        <div><img className='imovieslogo' src='../img/imovies.jpeg' alt="imovie"/>
+                
+        </div>
             <div>
             IMovies
             </div>
