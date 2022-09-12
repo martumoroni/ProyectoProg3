@@ -6,9 +6,10 @@ function Header(props) {
     
     return (    
         <header className="header">  
-        <div><img className='imovieslogo' src='../img/imovies.jpeg' alt="imovie"/>
-                <Link to='/'>Main</Link>
+        <div>
         </div>
+        <img className='imovieslogo' src='../img/imovies.jpeg' alt="imovie"/>
+                <Link to='/'>Main</Link>
             <div className='headerlista'>
             <Link to='/favoritos'>Favoritos</Link>
             <Link to='/peliculas'>Peliculas</Link>
