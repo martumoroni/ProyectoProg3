@@ -13,7 +13,10 @@ function Header(props) {
             <ul className="headerlista">
             <li><Link to='/favoritos'>Favoritos</Link></li>
             <li> <Link to='/peliculas'>Peliculas</Link></li>
+            <li><Link to='/Series'>Series</Link></li>
             <li><Link to='/ver-todos'>Ver todos</Link></li>
+      
+
             </ul>
             </div>
         </header>
