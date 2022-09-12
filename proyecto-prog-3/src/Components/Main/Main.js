@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Buscador from "../Buscador/Buscador";
 import PeliculaCard from "../PeliculaCard/PeliculaCard";
 import SerieCard from "../SerieCard/SerieCard";
 import "./Main.css"
@@ -26,7 +27,7 @@ fetch(`https://api.themoviedb.org/3/search/movie?api_key=af93cf6a36d0e3597028097
         fetch("https://api.themoviedb.org/3/movie/top_rated?api_key=af93cf6a36d0e3597028097290f9535d")
             .then(response => response.json())
             .then(data => this.setState(
-                { dataPelicula: data.results }
+                { dataPeliculas: data.results }
             ))
             .catch(error => console.log('el error fue ' + error))
 
@@ -43,6 +44,7 @@ fetch(`https://api.themoviedb.org/3/search/movie?api_key=af93cf6a36d0e3597028097
         return(
 
             <React.Fragment> 
+                <Buscador/>
 
                 <div className="titulo-container">
                     <h2 className="Titulo"> Mejores Peliculas</h2>
@@ -50,8 +52,6 @@ fetch(`https://api.themoviedb.org/3/search/movie?api_key=af93cf6a36d0e3597028097
                 <section className='card-container'>
                     {this.state.dataPeliculas.map((unPelicula, idx )=> <PeliculaCard key={unPelicula + idx} data={unPelicula}  image={unPelicula.poster_path} title={unPelicula.title}/>)}
                 </section>
-
-
 
                 <div className="titulo-container">
                     <h2 className="Titulo">Mejores Series</h2>
