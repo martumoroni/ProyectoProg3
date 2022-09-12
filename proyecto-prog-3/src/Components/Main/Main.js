@@ -3,16 +3,23 @@ import PeliculaCard from "../PeliculaCard/PeliculaCard";
 import SerieCard from "../SerieCard/SerieCard";
 import "./Main.css"
 
+//import Buscador from "../Buscador/Buscador";
+
 
 class Main extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            dataPelicula: [],
+            dataPeliculas: [],
             dataSeries: []
         }
     }
-
+buscarData(valor){
+fetch(`https://api.themoviedb.org/3/search/movie?api_key=af93cf6a36d0e3597028097290f9535d`)
+.then(resp=>resp.json)
+.then(data=>console.log(data))
+.catch(err=>console.log(err))
+}
     componentDidMount() {
 
         //Mejores Peliculas
@@ -36,12 +43,12 @@ class Main extends Component {
         return(
 
             <React.Fragment> 
-               
+
                 <div className="titulo-container">
                     <h2 className="Titulo"> Mejores Peliculas</h2>
                 </div>
                 <section className='card-container'>
-                    {this.state.dataPelicula.map((unPelicula, idx )=> <PeliculaCard key={unPelicula + idx} data={unPelicula}  image={unPelicula.poster_path} title={unPelicula.title}/>)}
+                    {this.state.dataPeliculas.map((unPelicula, idx )=> <PeliculaCard key={unPelicula + idx} data={unPelicula}  image={unPelicula.poster_path} title={unPelicula.title}/>)}
                 </section>
 
 
