@@ -13,9 +13,9 @@ class  PeliculaCard extends Component{
     render(){
         return(
         <article className='card-container-hijo'>
-            <img src={`https://image.tmdb.org/t/p/w342/${this.props.image}`} alt=""/>
+            <a href={`./DetallePelicula/${this.props.id}`}><img src={`https://image.tmdb.org/t/p/w342/${this.props.image}`} alt=""/></a>
             <h2>{this.props.title}</h2>  
-            <p className='more' >Ver más</p>               
+            <button className='more'onClick >Ver más</button>               
         </article>
            
         )
