@@ -1,8 +1,8 @@
-.header{
+/* .header{
     display: flex;
     justify-content: center;
     flex-direction: row;
-    background-color: #00c8ff;
+    background-color: rgb(255,255,255);
     padding: 4px 0;
     margin-top: 5px;
     color: white;
@@ -10,16 +10,17 @@
     width: 100%;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 20px;
-}
-.imovieslogo{
+} */
+/* .imovieslogo{
     display: flex;
     width: 10%;
     height: 100%;
     text-align: center;
     align-self: center;
     
-}
-.maineimagen{
+} */
+
+/* .maineimagen{
     display: flex;
     flex-direction: row;
     list-style: none;
@@ -37,4 +38,34 @@
 .headerlista li{
     margin:0 1vh;
     align-self: center;
+} */
+
+.header{
+    display: flex;
+    background-color: rgb(255,255,255);
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    font-size: 20px;
+}
+
+.maineimagen{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.headerlista{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+}
+
+.imovieslogo{
+    width: 10%;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(0,0,0);
 }
