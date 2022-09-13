@@ -59,6 +59,9 @@
     display: flex;
     justify-content: space-between;
     width: 50%;
+    
+
+
 }
 
 .imovieslogo{
@@ -69,3 +72,7 @@ a{
     text-decoration: none;
     color: rgb(0,0,0);
 }
+.headerlista li{
+    margin:0 1vh;
+    align-self: center;
+} 

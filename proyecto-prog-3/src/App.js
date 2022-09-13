@@ -6,6 +6,7 @@ import Peliculas from './Components/Peliculas/Peliculas'
 import Favoritos from './Components/Favoritos/Favoritos'
 import VerTodos from './Components/VerTodos/VerTodos'
 import { Route, Switch } from "react-router-dom";
+import Series from './Components/Series/Series';
 
 
 /*import PeliculaCard from './Components/PeliculaCard/PeliculaCard';
@@ -20,6 +21,7 @@ return(
         <Route path='/Favoritos' component={ Favoritos }/>
         <Route path='/Peliculas' component={ Peliculas }/>
         <Route path='/ver-todos'  component={ VerTodos }/>
+        <Route path='/Series' component={Series}/>
       </Switch>
     
     <Footer/>
