@@ -9,13 +9,24 @@ class  SerieCard extends Component{
             value:""
         }
     }
-
+    click() {
+        if (this.state.verMas === 'hide') {
+            this.setState({
+                verMas: 'show'
+            })}
+        else  (this.setState({
+            verMas: 'hide'
+        }))   
+}
     render(){
         return(
         <article className='card-container-hijo'>
             <img src={`https://image.tmdb.org/t/p/w342/${this.props.image}`} alt=""/>
             <h2>{this.props.title}</h2> 
-            <p className='more'>Ver más</p>               
+            <div className={this.state.verMas}>
+                    <h1>{this.props.title} </h1>
+                </div>
+            <button className='more' onClick={()=>this.click()} >Ver más</button>               
         </article>
            
         )
