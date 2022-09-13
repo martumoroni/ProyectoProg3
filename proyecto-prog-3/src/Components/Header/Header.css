@@ -8,7 +8,18 @@
     justify-content: center;
     flex-direction: row;
     padding: 50px 0;
-    text-decoration:none
+    text-decoration:none;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    background-color: #00c8ff;
+    padding: 4px 0;
+    margin-top: 5px;
+    color: white;
+    margin: auto;
+    width: 100%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
 }
 .imovieslogo{
     display: flex;
@@ -16,19 +27,25 @@
     width:7%;
     height: 10%;
     text-align: center;
+    align-self: center;
     
 }
-
-.footer{
+.maineimagen{
     display: flex;
-    justify-content: center;
     flex-direction: row;
-    background-color: #00c8ff;
-    padding: 50px 0;
-    margin-top: 50px;
-    color: white;
-    margin: auto;
-    width: 100%;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 20px;
+    list-style: none;
+    float: left;
+    align-self: center;
+    
+}
+.headerlista{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    align-self: center;
+    
+}
+.headerlista li{
+    margin:0 1vh;
+    align-self: center;
 }
