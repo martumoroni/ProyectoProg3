@@ -13,8 +13,6 @@ class VerTodasSeries extends Component {
 
     componentDidMount() {
 
-        //Mejores Series
-
         fetch("https://api.themoviedb.org/3/tv/popular?api_key=af93cf6a36d0e3597028097290f9535d")
             .then(response => response.json())
             .then(data => this.setState(
