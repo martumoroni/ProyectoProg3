@@ -6,22 +6,24 @@ class Buscador extends Component{
         super(props)
         this.state = {
             valorInput: '',
-            resultados: [],
+            resultados: [], 
         }
     }
     prevenirRefresch(event){
-        event.prevenirRefresch()
+        event.preventDefault()
     }
     controlarCambiosdelInput(event){
-        this.setState({
-            valorInput: event.target.value
-        }, ()=> this.props.metodoQueBusca
-        )}
+     if (event.target.id === 'inputSearch') {
+           this.setState({
+            valorInput: event.target.value},
+             ()=> this.props.metodoQueBusca(this.state.valorInput, this.state.valorInput)
+        )}} 
     render(){
         return( 
             <form onSubmit={event => this.prevenirRefresch(event)}>
                 <input onChange={(event=> this.controlarCambiosdelInput(event))} value={this.state.valorInput} />
-
+            
+            <button type='submit'>Submit</button>
             </form>
           ) } }
 

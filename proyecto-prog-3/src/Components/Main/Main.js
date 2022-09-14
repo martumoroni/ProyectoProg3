@@ -14,28 +14,34 @@ class Main extends Component {
             dataPeliculas: [],
             dataSeries: [],
             dataPeliculasCartel: [],
+            resultadoBusquedas: [],
+            valor: ''
         }
     }
 buscarData(valor){
-fetch(`https://api.themoviedb.org/3/search/company?api_key=af93cf6a36d0e3597028097290f9535d&page=1`)
-.then(resp=>resp.json)
-.then(data=>console.log(data))
+fetch(`https://api.themoviedb.org/3/search/company?q=${this.state.valor}api_key=af93cf6a36d0e3597028097290f9535d&page=1`)
+.then(resp=>resp.json())
+.then(data=>{this.setState({
+    resultadoBusquedas: data.results
+});
+
+})
 .catch(err=>console.log(err))
 }
     componentDidMount() {
 
         //Mejores Peliculas
-        fetch("https://api.themoviedb.org/3/movie/top_rated?api_key=af93cf6a36d0e3597028097290f9535d")
+        fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=af93cf6a36d0e3597028097290f9535d`)
             .then(response => response.json())
             .then(data => this.setState(
                 { dataPeliculas: data.results },
-             
+    
             ))
             .catch(error => console.log('el error fue ' + error))
 
         //Mejores Series
 
-        fetch("https://api.themoviedb.org/3/tv/popular?api_key=af93cf6a36d0e3597028097290f9535d")
+        fetch(`https://api.themoviedb.org/3/tv/popular?api_key=af93cf6a36d0e3597028097290f9535d`)
             .then(response => response.json())
             .then(data => this.setState(
                 { dataSeries: data.results }
@@ -43,7 +49,7 @@ fetch(`https://api.themoviedb.org/3/search/company?api_key=af93cf6a36d0e35970280
             .catch(error => console.log('el error fue ' + error))
 
             //Peliculas En Cartel
-            fetch('https://api.themoviedb.org/3/movie/now_playing?api_key=af93cf6a36d0e3597028097290f9535d')
+            fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=af93cf6a36d0e3597028097290f9535d`)
             .then(response => response.json())
             .then(data => this.setState(
                 { dataPeliculasCartel: data.results }
@@ -57,17 +63,15 @@ fetch(`https://api.themoviedb.org/3/search/company?api_key=af93cf6a36d0e35970280
                 <Buscador/>
 
                 <div className="titulo-container">
-                    <h2 className="Titulo"> Mejores Peliculas  </h2>   
-                    <a href='./Peliculas'> <h4>Ver Todas</h4></a>
+                    <h2 className="Titulo"> Mejores Peliculas  </h2>   <a href='./ver-todasPeli'> <h4 className='ver-to'>Ver Todas</h4></a>
                 </div>
                 <section className='card-container'>
                     {this.state.dataPeliculas.map((unPelicula, idx )=> <PeliculaCard key={unPelicula + idx} data={unPelicula}  image={unPelicula.poster_path} title={unPelicula.title} genre={unPelicula.genre} />)}
                 </section>
 
                 <div className="titulo-container">
-                    <h2 className="Titulo">Mejores Series</h2>
+                    <h2 className="Titulo">Mejores Series</h2>  <a href='./ver-todaSerie'> <h4 className='ver-to'>Ver Todas</h4></a>
                 </div>
-                <a href='./Series'> <h4>Ver Todas</h4></a>
                 <section className='card-container'>
                     {this.state.dataSeries.map((unSeries, idx )=> <SerieCard key={unSeries + idx} data={unSeries}  image={unSeries.poster_path} title={unSeries.name}/>)}
                 </section>

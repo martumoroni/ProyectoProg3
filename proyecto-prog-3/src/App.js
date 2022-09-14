@@ -21,7 +21,8 @@ return(
         <Route path='/' exact component={ Main}/>
         <Route path='/Favoritos' component={ Favoritos }/>
         <Route path='/Peliculas' component={ Peliculas }/>
-        <Route path='/ver-todos'  component={ VerTodos }/> 
+        <Route path='/ver-todaSerie'  component={VerTodasSerie}/> 
+        <Route path='/ver-todasPeli' component={VerTodasPeli}/>
         <Route path='/Series' component={Series}/>
       </Switch>
     
