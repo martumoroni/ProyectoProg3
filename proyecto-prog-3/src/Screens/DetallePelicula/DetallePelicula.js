@@ -8,7 +8,7 @@ class DetallePelicula extends Component {
         super(props);
         this.state = {
             data: '',
-            id: Number(props.match.params.id)
+            id: Number(props.match.params.id),
         }
     }
 
