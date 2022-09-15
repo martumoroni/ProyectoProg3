@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Buscador from "../Buscador/Buscador";
-import PeliculaCard from "../PeliculaCard/PeliculaCard";
+import PeliculaCard from "../PeliCard/PeliCard";
 import SerieCard from "../SerieCard/SerieCard";
 import "./Main.css"
 
@@ -17,6 +17,7 @@ class Main extends Component {
             resultadoBusquedas: [],
             valor: ''
         }
+        console.log("main actualizado")
     }
 buscarData(valor){
 fetch(`https://api.themoviedb.org/3/search/company?q=${this.state.valor}api_key=af93cf6a36d0e3597028097290f9535d&page=1`)
