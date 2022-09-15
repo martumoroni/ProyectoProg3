@@ -3,7 +3,7 @@ import "./PeliCard.css"
 import "../Main/Main.css"
 import { Link } from "react-router-dom";
 
-class PeliculaCard extends Component {
+class PeliCard extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -51,4 +51,4 @@ click() {
 }
 
 
-export default PeliculaCard;
+export default PeliCard;
