@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Buscador from "../Buscador/Buscador";
-import PeliculaCard from "../PeliCard/PeliCard";
+import PeliculaCard from "../PeliculaCard/PeliculaCard";
 import SerieCard from "../SerieCard/SerieCard";
 import "./Main.css"
 

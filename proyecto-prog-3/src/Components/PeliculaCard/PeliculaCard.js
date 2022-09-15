@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./PeliculaCard.css"
 import "../Main/Main.css"
+import { Link } from "react-router-dom";
 
 class PeliculaCard extends Component {
     constructor(props) {
@@ -10,6 +11,7 @@ class PeliculaCard extends Component {
             descripcion: '',
             verMas: 'hide',            
         }
+       // console.log(props.data.id)
     }
     click() {
         if (this.state.verMas === 'hide') {
@@ -20,10 +22,22 @@ class PeliculaCard extends Component {
             verMas: 'hide'
         }))   
 }
+click() {
+    if (this.state.verMas === 'hide') {
+        this.setState({
+            verMas: 'show'
+        })}
+    else  (this.setState({
+        verMas: 'hide'
+    }))   
+}
+
+
     render() {
         return (
+
             <article className='card-container-hijo'>
-                <a href={`./DetallePelicula/${this.props.id}`}><img src={`https://image.tmdb.org/t/p/w342/${this.props.image}`} alt="" /></a>
+               <Link to={`detallepelicula/${this.props.data.id}`}><img src={`https://image.tmdb.org/t/p/w342/${this.props.image}`} alt="" /></Link>
                 <h2>{this.props.title}</h2>
                 <div className={this.state.verMas}>
                     <h1>{this.props.title} </h1>
@@ -33,6 +47,8 @@ class PeliculaCard extends Component {
 
         )
     }
+    
 }
+
 
 export default PeliculaCard;

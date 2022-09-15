@@ -8,10 +8,11 @@ import VerTodasPeli from './Components/VerTodasPeli/VerTodasPeli'
 import VerTodasSerie from "./Components/VerTodasSerie/VerTodasSerie"
 import { Route, Switch } from "react-router-dom";
 import Series from './Components/Series/Series';
-import DetallePelicula from './Screens/DetallePelicula/DetallePelicula'
+import DetallePelicula from './Screens/DetallePelicula/DetallePelicula';
+import PeliculaCard from './Components/PeliculaCard/PeliculaCard';
 
 /* import PeliculaCard from './Components/PeliculaCard/PeliculaCard';
-import SerieCard from './Components/SerieCard/SerieCard'*/
+import SerieCard from './Components/SerieCard/SerieCard' */
 
 function App() {
 return(

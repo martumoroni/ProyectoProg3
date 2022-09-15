@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+ import React, { Component } from "react";
 
 
 class CardDetallePelicula extends Component {
@@ -29,5 +29,5 @@ class CardDetallePelicula extends Component {
     
 }
 
+export default CardDetallePelicula; 
 
-export default CardDetallePelicula;

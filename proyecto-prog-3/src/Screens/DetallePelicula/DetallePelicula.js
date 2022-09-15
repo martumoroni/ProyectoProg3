@@ -40,6 +40,7 @@ console.log(lastSegment, 'barro') */
                 {this.state.data ?
                 <div>
                 <CardDetallePelicula titulo={this.state.data.title} image={this.state.data.poster_path}/>
+                
 
                 </div> : <div> Cargando...</div>}
                 {console.log('renderizado!', this.state.data)}
@@ -50,3 +51,4 @@ console.log(lastSegment, 'barro') */
     }
 }
 export default DetallePelicula ;
+
