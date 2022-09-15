@@ -15,15 +15,17 @@ class Main extends Component {
             dataSeries: [],
             dataPeliculasCartel: [],
             resultadoBusquedas: [],
-            valor: ''
+            ready:false,
+            readyResultados:false
         }
         console.log("main actualizado")
     }
 buscarData(valor){
-fetch(`https://api.themoviedb.org/3/search/company?q=${this.state.valor}api_key=af93cf6a36d0e3597028097290f9535d&page=1`)
+fetch(`https://api.themoviedb.org/3/search/company?q=${this.state.resultadoBusquedas}api_key=af93cf6a36d0e3597028097290f9535d&page=1`)
 .then(resp=>resp.json())
 .then(data=>{this.setState({
-    resultadoBusquedas: data.results
+    resultadoBusquedas: data.results,
+    readyResultados:true
 });
 
 })
@@ -35,7 +37,8 @@ fetch(`https://api.themoviedb.org/3/search/company?q=${this.state.valor}api_key=
         fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=af93cf6a36d0e3597028097290f9535d`)
             .then(response => response.json())
             .then(data => this.setState(
-                { dataPeliculas: data.results },
+                { dataPeliculas: data.results,
+                ready: true },
     
             ))
             .catch(error => console.log('el error fue ' + error))
@@ -61,13 +64,13 @@ fetch(`https://api.themoviedb.org/3/search/company?q=${this.state.valor}api_key=
         return(
 
             <React.Fragment> 
-                <Buscador/>
+                <Buscador metodoQueBusca ={(valor)=> this.buscarData(valor)}/>
 
                 <div className="titulo-container">
                     <h2 className="Titulo"> Mejores Peliculas  </h2>   <a href='./ver-todasPeli'> <h4 className='ver-to'>Ver Todas</h4></a>
                 </div>
                 <section className='card-container'>
-                    {this.state.dataPeliculas.map((unPelicula, idx )=> <PeliculaCard key={unPelicula + idx} data={unPelicula}  image={unPelicula.poster_path} title={unPelicula.title} genre={unPelicula.genre} />)}
+                    {this.state.dataPeliculas.map((unPelicula, idx )=> <PeliculaCard key={unPelicula + idx} data={unPelicula}  image={unPelicula.poster_path} title={unPelicula.title} genre={unPelicula.genres} />)}
                 </section>
 
                 <div className="titulo-container">

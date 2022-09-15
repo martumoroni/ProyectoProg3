@@ -9,6 +9,9 @@ class Buscador extends Component{
             resultados: [], 
         }
     }
+    otroMetodo(){
+        console.log('otro metodo')
+      }
     prevenirRefresch(event){
         event.preventDefault()
     }

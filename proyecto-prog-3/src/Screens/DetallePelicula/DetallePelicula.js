@@ -15,6 +15,8 @@ class DetallePelicula extends Component {
             companies: {},
             country: {},
             mensaje: 'Agregar a favoritos',
+            data: '',
+            id: Number(props.match.params.id),
         }
     }
 
