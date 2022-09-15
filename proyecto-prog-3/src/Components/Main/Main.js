@@ -70,7 +70,8 @@ fetch(`https://api.themoviedb.org/3/search/company?q=${this.state.resultadoBusqu
                     <h2 className="Titulo"> Mejores Peliculas  </h2>   <a href='./ver-todasPeli'> <h4 className='ver-to'>Ver Todas</h4></a>
                 </div>
                 <section className='card-container'>
-                    {this.state.dataPeliculas.map((unPelicula, idx )=> <PeliculaCard key={unPelicula + idx} data={unPelicula}  image={unPelicula.poster_path} title={unPelicula.title} genre={unPelicula.genres} />)}
+                    {console.log(this.state.dataPeliculas.length, 'verificar')}
+                    {this.state.dataPeliculas.length == 0 ? <div> Cargando...</div> : this.state.dataPeliculas.map((unPelicula, idx )=> <PeliculaCard key={unPelicula + idx} data={unPelicula}  image={unPelicula.poster_path} title={unPelicula.title} genre={unPelicula.genres} />)}
                 </section>
 
                 <div className="titulo-container">

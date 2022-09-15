@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 class PeliculaCard extends Component {
     constructor(props) {
         super(props);
+        console.log('pedazo', props)
         this.state = {
             value: '',
             descripcion: '',
