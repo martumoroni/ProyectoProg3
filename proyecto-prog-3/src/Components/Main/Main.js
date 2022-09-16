@@ -101,20 +101,20 @@ class Main extends Component {
                 </div>
                 <section className='card-container'>
                     {console.log(this.state.dataPeliculas.length, 'verificar')}
-                    {this.state.dataPeliculas.length == 0 ? <div> Cargando...</div> : this.state.dataPeliculas.map((unPelicula, idx )=> <PeliculaCard key={unPelicula + idx} data={unPelicula}  image={unPelicula.poster_path} title={unPelicula.title} genre={unPelicula.genres} />)}
+                    {this.state.dataPeliculas.length === 0 ? <div> Cargando...</div> : this.state.dataPeliculas.map((unPelicula, idx )=> <PeliculaCard key={unPelicula + idx} data={unPelicula}  image={unPelicula.poster_path} title={unPelicula.title} descripcion={unPelicula.overview} />)}
                 </section>
 
                 <div className="titulo-container">
                     <h2 className="Titulo">Mejores Series</h2>  <a href='./ver-todaSerie'> <h4 className='ver-to'>Ver Todas</h4></a>
                 </div>
                 <section className='card-container'>
-                    {this.state.dataSeries.map((unSeries, idx )=> <SerieCard key={unSeries + idx} data={unSeries}  image={unSeries.poster_path} title={unSeries.name}/>)}
+                    {this.state.dataSeries.map((unSeries, idx )=> <SerieCard key={unSeries + idx} data={unSeries}  image={unSeries.poster_path} title={unSeries.name} descripcion={unSeries.overview} />)}
                 </section>
                 <div className="titulo-container">
             <h2>Cartelera</h2>
                 </div>
                 <section className='card-container'>
-                    {this.state.dataPeliculasCartel.map((unPeliculaC, idx )=> <PeliculaCard key={unPeliculaC + idx} data={unPeliculaC}  image={unPeliculaC.poster_path} title={unPeliculaC.title} genre={unPeliculaC.genre} />)}
+                    {this.state.dataPeliculasCartel.map((unPeliculaC, idx )=> <PeliculaCard key={unPeliculaC + idx} data={unPeliculaC}  image={unPeliculaC.poster_path} title={unPeliculaC.title} descripcion={unPeliculaC.overview} />)}
                 </section>  
             </React.Fragment>
         )

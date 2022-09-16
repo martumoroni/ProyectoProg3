@@ -9,7 +9,7 @@ import { Route, Switch } from "react-router-dom";
 import Series from './Components/Series/Series';
 import DetallePelicula from './Screens/DetallePelicula/DetallePelicula';
 import DetalleSerie from './Screens/DetalleSerie/DetalleSerie';
-import PeliculaCard from './Components/PeliculaCard/PeliculaCard';
+//import PeliculaCard from './Components/PeliculaCard/PeliculaCard';
 import NotFound from './Screens/NotFound/NotFound';
 
 /* import PeliculaCard from './Components/PeliculaCard/PeliculaCard';

@@ -1,7 +1,6 @@
 /* c037da6882c3b5641c3425b1e80847bb */ 
 
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import './DetalleSerie.css'
 
 class DetalleSerie extends Component {
@@ -36,7 +35,7 @@ class DetalleSerie extends Component {
         return (
             
             <article className='detail-card'>
-                {this.state.datosSerie.length == 0 ? <div>Cargando...</div> : 
+                {this.state.datosSerie.length === 0 ? <div>Cargando...</div> : 
                 <div>
                 <img src={`https://image.tmdb.org/t/p/w500/${this.state.datosSerie.poster_path}`} alt="" />
                 <div>

@@ -1,10 +1,6 @@
-.show{
+.verMenos{
     display: block;
 }
-.hide{
+.verMas{
     display: none;
-}
-.vermas{
-    color: aqua;
-    font-size: small;
 }

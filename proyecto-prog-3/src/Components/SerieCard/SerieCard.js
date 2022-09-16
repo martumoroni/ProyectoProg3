@@ -7,17 +7,18 @@ class  SerieCard extends Component{
     constructor(props){
         super(props);
         this.state ={
-            value:""
+            value:"",
+            verMas: 'verMas'
         }
     }
     click() {
-        if (this.state.verMas === 'hide') {
+        if (this.state.verMas === 'verMas') {
             this.setState({
-                verMas: 'show'
+                verMas: 'verMenos'
             })}
         else  (this.setState({
-            verMas: 'hide'
-        }))   
+            verMas: 'verMas'
+        }))  
 }
     render(){
         return(
@@ -27,9 +28,9 @@ class  SerieCard extends Component{
             </Link>
             <h2>{this.props.title}</h2> 
             <div className={this.state.verMas}>
-                    <h1>{this.props.title} </h1>
+                    <h1>{this.props.descripcion} </h1>
                 </div>
-            <button className='more' onClick={()=>this.click()} >Ver más</button>               
+            <button className='more' onClick={()=>this.click()} > {this.state.verMas} </button>               
         </article>
            
         )
