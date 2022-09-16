@@ -1,6 +1,7 @@
 /* c037da6882c3b5641c3425b1e80847bb */ 
 
 import React, { Component } from 'react';
+//import { Link } from 'react-router-dom';
 import './DetalleSerie.css'
 
 class DetalleSerie extends Component {
@@ -16,7 +17,7 @@ class DetalleSerie extends Component {
     }
 
     componentDidMount() {
-        fetch(`https://api.themoviedb.org/3/movie/${this.state.id}?api_key=c037da6882c3b5641c3425b1e80847bb`)
+        fetch(`https://api.themoviedb.org/3/tv/${this.state.id}?api_key=c037da6882c3b5641c3425b1e80847bb`)
             .then(res => res.json())
             .then(data => this.setState({
                 datosSerie: data,
@@ -35,7 +36,7 @@ class DetalleSerie extends Component {
         return (
             
             <article className='detail-card'>
-                {this.state.datosSerie.length === 0 ? <div>Cargando...</div> : 
+                {this.state.datosPelicula === '' ? <h3>Cargando...</h3> :  
                 <div>
                 <img src={`https://image.tmdb.org/t/p/w500/${this.state.datosSerie.poster_path}`} alt="" />
                 <div>

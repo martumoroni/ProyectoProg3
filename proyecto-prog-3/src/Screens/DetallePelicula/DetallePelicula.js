@@ -36,7 +36,7 @@ class DetallePelicula extends Component {
         return (
             
             <article className='detail-card'>
-                {this.state.datosPelicula.length === 0 ? <div>Cargando...</div> : 
+                {this.state.datosPelicula === '' ? <h3>Cargando...</h3> : 
                 <div>
                 <img src={`https://image.tmdb.org/t/p/w500/${this.state.datosPelicula.poster_path}`} alt="" />
                 <div>
