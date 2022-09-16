@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import PeliculaCard from '../PeliculaCard/PeliculaCard';
 import SerieCard from "../SerieCard/SerieCard"
+import Buscador from "../Buscador/Buscador";
 
 
 class VerTodas extends Component {
@@ -40,6 +41,52 @@ class VerTodas extends Component {
 
     }
 
+    buscarData(valor){
+        if (valor !== ""){
+            fetch(`https://api.themoviedb.org/3/search/movie?api_key=af93cf6a36d0e3597028097290f9535d&language=en-US&query=${valor}&page=1&include_adult=false`)
+
+            .then(resp=>resp.json())
+            .then(data => this.setState(
+                { dataPeliculas: data.results },
+            ))
+
+            .catch(err=>console.log(err))
+
+            fetch(`https://api.themoviedb.org/3/search/tv?api_key=af93cf6a36d0e3597028097290f9535d&language=en-US&query=${valor}&page=1&include_adult=false`)
+
+            .then(resp=>resp.json())
+            .then(data => this.setState(
+                { dataSeries: data.results },
+            ))
+
+            .catch(err=>console.log(err))
+            
+        }
+        else{
+            fetch(`https://api.themoviedb.org/3/movie/popular?api_key=af93cf6a36d0e3597028097290f9535d&language=en-US&page=${this.state.contadorPeli}`)
+
+            .then(response => response.json())
+            .then(data => this.setState(
+                { 
+                  dataPeliculas: data.results,
+                  contadorPeli: this.state.contadorPeli + 1
+                }
+            ))
+            .catch(error => console.log('el error fue ' + error))
+
+        fetch(`https://api.themoviedb.org/3/tv/popular?api_key=af93cf6a36d0e3597028097290f9535d&page=${this.state.contadorSerie}`)
+
+            .then(response => response.json())
+            .then(data => this.setState(
+                {
+                  dataSeries:data.results,
+                  contadorSerie: this.state.contadorSerie + 1
+                }
+            )) 
+            .catch(error => console.log('el error fue ' + error))    
+        }
+    }
+
     buscarMasPeliculas() {
         
         let peliculasViejas = this.state.dataPeliculas
@@ -67,10 +114,13 @@ class VerTodas extends Component {
             ))
             .catch(error => console.log('el error fue ' + error))
     }
+
     render(){
         return(
 
-            <React.Fragment> 
+            <React.Fragment>
+
+                <Buscador filtrar={(texto) => this.buscarData(texto)}/>
 
                 <div className="titulo-container">
                     <h2 className="Titulo">Todas las películas</h2>
