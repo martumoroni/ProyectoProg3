@@ -1,38 +1,41 @@
 import React, { Component } from "react";
 import PeliculaCard from "../PeliculaCard/PeliculaCard";
+import SerieCard from "../SerieCard/SerieCard";
 import './Favoritos.css'
+
 
 
 class Favoritos extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            props : props
+            arrayFavs: [],
+            dataPeliculas: [],
+            dataSeries: [],
         }
     };
 
     componentDidMount(){
-        let agarroFavs = localStorage.getItem("favoritos")
+        let traigoFavs = localStorage.getItem("favoritos")
+       
+        if(traigoFavs !==null){
+            
+        let parseado = JSON.parse(traigoFavs) 
 
-        if(agarroFavs !==null){
-            let fav = JSON.parse(agarroFavs) //convierto JSON para que retorne el array que traigo del localStorage
-            let favs = []
-
-        fav.forEach((id) => {
-            fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=af93cf6a36d0e3597028097290f9535d`)
-            .then(response => response.json())
-            .then(data => {
-                favs.push(data)
-
-                this.setState({
-                    favs: favs,
-                    loader: false
-                })
+        Promise.all(
+            parseado.map(Element => {
+                return(
+                    fetch()
+                    .then(response => response.json())
+                )
             })
+        )
+
+        .then(data => this.setState({
+            arrayFavs: data
+        }))
 
         .catch(err => console.log(err))
-            
-        });
 
         }
     }
@@ -40,15 +43,19 @@ class Favoritos extends Component {
     render () {
         return (
         <React.Fragment>
-             <h2>Tus Favoritos</h2>
-             <section className="containerFavs">
-             {this.state.favs.map((favs, idx) => 
-             
-             <PeliculaCard 
-             key= {favs.title + idx} 
-             info= {favs} />)
-            }
-             </section>
+
+             <h2>Tus películas favoritas</h2>
+
+             <section className='card-container'>
+                    {this.state.dataPeliculas.map((unPelicula, idx )=> <PeliculaCard key={unPelicula + idx} data={unPelicula}  image={unPelicula.poster_path} title={unPelicula.title}/>)}
+                </section>
+
+            <h2>Tus series favoritas</h2>
+
+            <section className='card-container'>
+                  {this.state.dataSeries.map((unSeries, idx )=> <SerieCard key={unSeries+ idx} data={unSeries}  image={unSeries.poster_path} title={unSeries.name}/>)}
+            </section>
+
         </React.Fragment>
         );
     };
