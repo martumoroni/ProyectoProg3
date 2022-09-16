@@ -38,7 +38,13 @@ class Favoritos extends Component {
         .catch(err => console.log(err))
 
         }
+
     }
+
+    // BorrarDeFavoritos(){
+        // ya la puse en el button del render
+
+   // }
 
     render () {
         return (
@@ -48,12 +54,18 @@ class Favoritos extends Component {
 
              <section className='card-container'>
                     {this.state.dataPeliculas.map((unPelicula, idx )=> <PeliculaCard key={unPelicula + idx} data={unPelicula}  image={unPelicula.poster_path} title={unPelicula.title}/>)}
+
+                    <button onClick={() => this.BorrarDeFavoritos()}>Quitar de favoritos</button>
+
                 </section>
 
             <h2>Tus series favoritas</h2>
 
             <section className='card-container'>
                   {this.state.dataSeries.map((unSeries, idx )=> <SerieCard key={unSeries+ idx} data={unSeries}  image={unSeries.poster_path} title={unSeries.name}/>)}
+
+                  <button onClick={() => this.BorrarDeFavoritos()}>Quitar de favoritos</button> 
+
             </section>
 
         </React.Fragment>
