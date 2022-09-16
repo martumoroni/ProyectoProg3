@@ -10,7 +10,7 @@ import Series from './Components/Series/Series';
 import DetallePelicula from './Screens/DetallePelicula/DetallePelicula';
 import DetalleSerie from './Screens/DetalleSerie/DetalleSerie';
 import PeliculaCard from './Components/PeliculaCard/PeliculaCard';
-
+import NotFound from './Screens/NotFound/NotFound';
 
 /* import PeliculaCard from './Components/PeliculaCard/PeliculaCard';
 import SerieCard from './Components/SerieCard/SerieCard' */
@@ -27,6 +27,7 @@ return(
         <Route path='/Series' component={Series}/>
         <Route path='/detallepelicula/:id' component={DetallePelicula}/>
         <Route path='/detalleserie/:id' component={DetalleSerie}/>
+        <Route path='' component={NotFound}/>
 
 
 
