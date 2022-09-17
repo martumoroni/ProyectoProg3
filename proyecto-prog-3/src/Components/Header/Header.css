@@ -1,84 +1,48 @@
 .header{
-    font-size: 30px;
-    font-weight: bolder;
     text-align: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-color:black;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    background-color: rgb(255,255,255);
-    padding: 4px 0;
-    margin-top: 5px;
-    color: white;
-    margin: auto;
-    width: 100%;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 20px;
-} */
-/* .imovieslogo{
-    display: flex;
-    margin-right: 30px;
-    width:7%;
-    height: 10%;
-    text-align: center;
-    align-self: center;
-    
-} */
-
-/* .maineimagen{
-    display: flex;
-    flex-direction: row;
     list-style: none;
-    float: left;
-    align-self: center;
-    
-}
-.headerlista{
     display: flex;
-    flex-direction: row;
-    list-style: none;
-    align-self: center;
-    
-}
-.headerlista li{
-    margin:0 1vh;
-    align-self: center;
-} */
-
-.header{
-    display: flex;
-    background-color: rgb(255,255,255);
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px;
-    font-size: 20px;
-}
-
-.maineimagen{
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.headerlista{
-    display: flex;
-    justify-content: space-between;
-    width: 50%;
-    
-
-
 }
 
 .imovieslogo{
-    width: 10%;
+    height: 120px;
+    width: 120px;
+    margin-top: 14px;
 }
 
-a{
-    text-decoration: none;
-    color: rgb(0,0,0);
+.maineimagen{
+    display: inline-flex;
+    justify-content: space-around;
+    margin-left: 20px;
 }
-.headerlista li{
-    margin:0 1vh;
-    align-self: center;
-} 
+
+.headerLista{
+    list-style: none;
+    display: inline-flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-left: 330px;
+    font-size: larger;
+    margin-top: 48px;
+    
+}
+.headerlista{
+    text-decoration: none;
+    color: white;
+    justify-content: space-around;
+}
+
+.headerTitulo{
+    text-decoration: none;
+    color: white;
+    justify-content: space-around;
+    list-style: none;
+    display: inline-flex;
+    justify-content: space-around;
+    width: 100%;
+    font-size: xx-large;
+    font-family: rockwell;
+    font-weight: bolder;
+    color:white;
+    margin-top: 50px;
+}
