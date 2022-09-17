@@ -31,7 +31,7 @@ class PeliculaCard extends Component {
                <Link to={`detallepelicula/${this.props.data.id}`}><img src={`https://image.tmdb.org/t/p/w342/${this.props.image}`} alt="" /></Link>
                 <h2>{this.props.title}</h2>
                 <div className={this.state.verMas}>
-                    <h2 > {this.props.data.overview} </h2>
+                    <h2 className='vermas'> {this.props.data.overview} </h2>
                     <h2>{this.props.data.status} </h2>
                 </div>
                 <button className='more' onClick={()=>this.click()}>{this.state.verMas} </button>
