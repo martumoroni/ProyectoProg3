@@ -11,8 +11,6 @@ class DetalleSerie extends Component {
             id: Number(props.match.params.id),
             datosSerie: [],
             genres: '',
-            companies: {},
-            country: {},
         }
     }
 
@@ -22,8 +20,6 @@ class DetalleSerie extends Component {
             .then(data => this.setState({
                 datosSerie: data,
                 genres: data.genres[0].name,
-                companies: data.production_companies[0],
-                country: data.production_countries[0]
             }))
             .catch(err => console.log(err))
 
@@ -46,8 +42,7 @@ class DetalleSerie extends Component {
                     <p>Califiación: {Math.round(this.state.datosSerie.vote_average * 100) / 100}</p>
                     <p>Duración: {this.state.datosSerie.runtime} minutos</p>
                     <p>Generos: {this.state.genres}</p>
-                    <p>Producción: {this.state.companies.name}</p>
-                    <p>País de producción: {this.state.country.name}</p>
+                
                 </div>
                 </div>}
 
