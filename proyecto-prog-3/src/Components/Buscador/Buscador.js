@@ -1,4 +1,6 @@
 import React, {Component} from 'react'
+import "./Buscador.css"
+
 
 class Buscador extends Component{
     constructor(props){
@@ -21,9 +23,8 @@ class Buscador extends Component{
 
     render(){
         return( 
-            <form onSubmit={event => this.prevenirRefresch(event)}>
+            <form className='buscador' onSubmit={event => this.prevenirRefresch(event)}>
                 <input onChange={(event=> this.controlarCambiosdelInput(event))} value={this.state.valorInput} />
-        
 
             </form>
           ) } }

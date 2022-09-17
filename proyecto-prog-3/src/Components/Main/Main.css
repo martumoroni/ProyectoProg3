@@ -10,7 +10,7 @@ body {
 
 .titulo-container{
     font-size: large;
-    margin-left: 30px;
+    margin-left: 9px;
     padding-left: 10px;
     margin-bottom: 40px;
     margin-top: 90px;
@@ -44,8 +44,10 @@ body {
     padding: 10px;
     border-radius: 5px;
     width: 200px;
-    border: white, 30cm
+    border: white, 30cm;
+    
 }
 .ver-to{
-color: aqua;
+color: white;
+text-decoration: none;
 }

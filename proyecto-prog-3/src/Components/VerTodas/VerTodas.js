@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import PeliculaCard from '../PeliculaCard/PeliculaCard';
 import SerieCard from "../SerieCard/SerieCard"
 import Buscador from "../Buscador/Buscador";
+import "./VerTodos.css"
 
 
 class VerTodas extends Component {
@@ -130,7 +131,7 @@ class VerTodas extends Component {
                     {this.state.dataPeliculas.map((unPelicula, idx )=> <PeliculaCard key={unPelicula + idx} data={unPelicula}  image={unPelicula.poster_path} title={unPelicula.title}/>)}
                 </section>
 
-                <button onClick={() => this.buscarMasPeliculas()}>Buscar más películas</button>
+                <button className="botonBuscarMas" onClick={() => this.buscarMasPeliculas()}>Buscar más películas..</button>
 
 
                 
@@ -142,7 +143,7 @@ class VerTodas extends Component {
                     {this.state.dataSeries.map((unSeries, idx )=> <SerieCard key={unSeries+ idx} data={unSeries}  image={unSeries.poster_path} title={unSeries.name}/>)}
                 </section>
 
-                <button onClick={() => this.buscarMasSeries()}>Buscar más series</button>
+                <button className="botonBuscarMasSerie" onClick={() => this.buscarMasSeries()}>Buscar más series..</button>
 
             </React.Fragment>
 
