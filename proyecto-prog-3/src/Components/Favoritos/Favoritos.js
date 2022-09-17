@@ -16,17 +16,34 @@ class Favoritos extends Component {
     };
 
     componentDidMount(){
-        let traigoFavs = localStorage.getItem("favoritos")
+        let traigoFavs = localStorage.getItem(`favoritos`)
        
         if(traigoFavs !==null){
             
         let parseado = JSON.parse(traigoFavs) 
 
         Promise.all(
-            parseado.map(Element => {
+            parseado.map(element => {
                 return(
-                    fetch()
+                    fetch(`https://api.themoviedb.org/3/movie/${element}?api_key=ec7d1aeea6d41d212821b84124febd74`)
                     .then(response => response.json())
+                    .then (data => data)
+                )
+            })
+        )
+
+        .then(data => this.setState({
+            arrayFavs: data
+        }))
+
+        .catch(err => console.log(err))
+
+        Promise.all(
+            parseado.map(element => {
+                return(
+                    fetch(`https://api.themoviedb.org/3/tv/${element}?api_key=ec7d1aeea6d41d212821b84124febd74`)
+                    .then(response => response.json())
+                    .then (data => data)
                 )
             })
         )
@@ -41,11 +58,6 @@ class Favoritos extends Component {
 
     }
 
-    // BorrarDeFavoritos(){
-        // ya la puse en el button del render
-
-   // }
-
     render () {
         return (
         <React.Fragment>
@@ -53,18 +65,14 @@ class Favoritos extends Component {
              <h2>Tus películas favoritas</h2>
 
              <section className='card-container'>
-                    {this.state.dataPeliculas.map((unPelicula, idx )=> <PeliculaCard key={unPelicula + idx} data={unPelicula}  image={unPelicula.poster_path} title={unPelicula.title}/>)}
-
-                    <button onClick={() => this.BorrarDeFavoritos()}>Quitar de favoritos</button>
+                    {this.state.dataPeliculas.map((unPelicula, idx )=> <PeliculaCard key={unPelicula + idx} data={unPelicula}  image={unPelicula.poster_path} title={unPelicula.title} favorito={(idx)=> this.favorites(idx)}/>)}
 
                 </section>
 
             <h2>Tus series favoritas</h2>
 
             <section className='card-container'>
-                  {this.state.dataSeries.map((unSeries, idx )=> <SerieCard key={unSeries+ idx} data={unSeries}  image={unSeries.poster_path} title={unSeries.name}/>)}
-
-                  <button onClick={() => this.BorrarDeFavoritos()}>Quitar de favoritos</button> 
+                  {this.state.dataSeries.map((unSeries, idx )=> <SerieCard key={unSeries+ idx} data={unSeries}  image={unSeries.poster_path} title={unSeries.name} favorito={(idx)=> this.favorites(idx)}/>)}
 
             </section>
 

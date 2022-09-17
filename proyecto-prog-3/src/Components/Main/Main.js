@@ -97,7 +97,7 @@ class Main extends Component {
                 <Buscador filtrar ={(texto) => this.buscarData(texto)}/>
 
                 <div className="titulo-container">
-                    <h2 className="Titulo"> Mejores Peliculas  </h2>   <a href='./ver-todasPeli'> <h4 className='ver-to'>Ver Todas</h4></a>
+                    <h2 className="Titulo"> Mejores Peliculas  </h2>   <a href='./ver-todas'> <h4 className='ver-to'>Ver Todas</h4></a>
                 </div>
                 <section className='card-container'>
                     {console.log(this.state.dataPeliculas.length, 'verificar')}
@@ -105,7 +105,7 @@ class Main extends Component {
                 </section>
 
                 <div className="titulo-container">
-                    <h2 className="Titulo">Mejores Series</h2>  <a href='./ver-todaSerie'> <h4 className='ver-to'>Ver Todas</h4></a>
+                    <h2 className="Titulo">Mejores Series</h2>  <a href='./ver-todas'> <h4 className='ver-to'>Ver Todas</h4></a>
                 </div>
                 <section className='card-container'>
                     {this.state.dataSeries.map((unSeries, idx )=> <SerieCard key={unSeries + idx} data={unSeries}  image={unSeries.poster_path} title={unSeries.name} descripcion={unSeries.overview} />)}
