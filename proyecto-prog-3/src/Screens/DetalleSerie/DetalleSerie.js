@@ -40,7 +40,6 @@ class DetalleSerie extends Component {
                     <p>{this.state.datosSerie.overview}</p>
                     <p>Fecha de estreno (AA-MM-DD): {this.state.datosSerie.release_date}</p>
                     <p>Califiación: {Math.round(this.state.datosSerie.vote_average * 100) / 100}</p>
-                    <p>Duración: {this.state.datosSerie.runtime} minutos</p>
                     <p>Generos: {this.state.genres}</p>
                 
                 </div>
