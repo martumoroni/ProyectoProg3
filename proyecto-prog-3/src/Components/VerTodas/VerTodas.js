@@ -90,7 +90,7 @@ class VerTodas extends Component {
     buscarMasPeliculas() {
         
         let peliculasViejas = this.state.dataPeliculas
-        fetch(`https://api.themoviedb.org/3/tv/popular?api_key=af93cf6a36d0e3597028097290f9535d&page=${this.state.contadorPeli}`)
+        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=af93cf6a36d0e3597028097290f9535d&page=${this.state.contadorPeli}`)
 
             .then(response => response.json())
             .then(data => this.setState(

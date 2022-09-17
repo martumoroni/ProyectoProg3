@@ -21,13 +21,33 @@ componentDidMount() {
             .catch(error => console.log('el error fue ' + error))
     }
 
+    favorites(id){
+        let favoritoArr = this.state.dataPeliculas.filter(elm => elm.id === id)
+        this.setState({
+          favorito: this.state.favorito.concat(favoritoArr)
+        })
+    
+        let arrayAGuardar = JSON.stringify(this.state.favorito)
+    
+        localStorage.setItem('favoritos', arrayAGuardar)
+    
+        let recuperarStorage = localStorage.getItem('favoritos')
+      }
+    
+      borrar(id){
+        let arrayFiltrado = this.state.dataPeliculas.filter(personaje => personaje.id !== id)
+        this.setState({
+          dataPeliculas: arrayFiltrado
+        })
+      }
+
     render () {
         return (
 
             <React.Fragment> 
                 <h1>Series</h1>
                 <section className='card-container'>
-                    {this.state.dataSeries.map((unSeries, idx )=> <SerieCard key={unSeries + idx} data={unSeries}  image={unSeries.poster_path} title={unSeries.name}/>)}
+                    {this.state.dataSeries.map((unSeries, idx )=> <SerieCard key={unSeries + idx} data={unSeries}  image={unSeries.poster_path} title={unSeries.name} favorito={(idx)=> this.favorites(idx)}/>)}
                 </section>
 <section>
 
