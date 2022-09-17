@@ -17,15 +17,17 @@ class DetallePelicula extends Component {
     componentDidMount() {
         fetch(`https://api.themoviedb.org/3/movie/${this.state.id}?api_key=c037da6882c3b5641c3425b1e80847bb`)
             .then(res => res.json())
-            .then(data => this.setState({
-                datosPelicula: data,
-                genres: data.genres[0].name,
-            }))
+            .then(data => {
+                this.setState({
+                    datosPelicula: data,
+                    genres: data.genres[0].name,
+                })
+                console.log('Data del detalle de peli', data)
+            }
+            )
             .catch(err => console.log(err))
 
     }
-
-
 
 
     render() {
