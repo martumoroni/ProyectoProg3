@@ -50,9 +50,6 @@ componentDidMount() {
         })
       }
 
-    
-
-    
     render () {
         return (
 

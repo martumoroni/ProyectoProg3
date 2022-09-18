@@ -8,7 +8,8 @@ class  SerieCard extends Component{
         super(props);
         this.state ={
             value:"",
-            verMas: 'verMas'
+            verMas: 'verMas',
+            estadoFavoritos: 'Agregar a favoritos'      
         }
     }
     click() {
