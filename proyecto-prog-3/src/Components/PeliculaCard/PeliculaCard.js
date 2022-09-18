@@ -10,7 +10,8 @@ class PeliculaCard extends Component {
         this.state = {
             value: '',
             descripcion: '',
-            verMas: 'verMas',            
+            verMas: 'verMas',   
+            estadoFavoritos: 'Agregar a favoritos'       
         }
       
     }
@@ -24,46 +25,37 @@ class PeliculaCard extends Component {
         }))   
 }
 
-    agregarAFavoritos(idx){
-        let traigoStorage = localStorage.getItem('favoritos')
-        
-        if(traigoStorage == null){
-            let arrayId = [idx]
+    agregarYQuitarFavoritos(idx){
 
-            let arrayAString = JSON.stringify(arrayId)
-            localStorage.setItem('favoritos', arrayAString)
+        let traigoStorage = []
+
+        let Storage = localStorage.getItem('favoritosPeliculas')
+        
+        if(Storage !== null){
+           
+            traigoStorage = JSON.parse(Storage)
         } 
-        else {
-            let parsedStorage = JSON.parse(traigoStorage)
-            parsedStorage.push(idx)
 
-            let storageToString = JSON.stringify(parsedStorage)
-            localStorage.setItem('favoritos', storageToString)
+
+        if(traigoStorage.includes(idx)){
+            traigoStorage = traigoStorage.filter( id => id !== idx )
+            this.setState({
+                estadoFavoritos: "Agregar a favoritos"
+            })
         }
-        
-        this.setState({
-            favorito: true
-        })
+        else {
+            traigoStorage.push(idx)
 
+            this.setState({
+                estadoFavoritos: "Quitar de favoritos"
+            })
+        }
+
+        let guardoFavoritos = JSON.stringify(traigoStorage)
+
+        localStorage.setItem('favoritosPeliculas', guardoFavoritos)
 
     }
-
-    quitarDeFavoritos(idx){
-    
-        let traigoStorage = localStorage.getItem('favoritos')
-
-        let storageParsed = JSON.parse(traigoStorage) 
-
-        let filteredStorage = storageParsed.filter(elm => elm !== idx)
-
-        let storageToString = JSON.stringify(filteredStorage)
-        localStorage.setItem('favoritos', storageToString)
-
-        this.setState({
-            favorito: false
-        })
-    }
-
 
     render() {
         return (
@@ -79,9 +71,7 @@ class PeliculaCard extends Component {
                
                 <button className='more' onClick={()=>this.click()}>{this.state.verMas} </button>
 
-                <button onClick={() => this.agregarAFavoritos(this.props.id)}>Agregar a Favoritos</button>
-
-                <button onClick={() => this.quitarDeFavoritos(this.props.id)}>Quitar de favoritos</button>
+                <button onClick={() => this.agregarYQuitarFavoritos(this.props.data.id)}>{this.state.estadoFavoritos}</button>
 
             </article>
 

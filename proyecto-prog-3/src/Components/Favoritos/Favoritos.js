@@ -9,56 +9,44 @@ class Favoritos extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            arrayFavs: [],
             dataPeliculas: [],
             dataSeries: [],
         }
     };
 
     componentDidMount(){
-        let traigoFavs = localStorage.getItem(`favoritos`)
+        let traigoFavsPeliculas = localStorage.getItem(`favoritosPeliculas`)
        
-        if(traigoFavs !==null){
+        if(traigoFavsPeliculas !==null){
             
-        let parseado = JSON.parse(traigoFavs) 
+        let parseado = JSON.parse(traigoFavsPeliculas) 
 
-        Promise.all(
             parseado.map(element => {
                 return(
                     fetch(`https://api.themoviedb.org/3/movie/${element}?api_key=ec7d1aeea6d41d212821b84124febd74`)
                     .then(response => response.json())
-                    .then (data => data)
+
+                    .then(data => this.setState({
+                        dataPeliculas: this.state.dataPeliculas.concat(data)
+                    }))
+            
+                    .catch(err => console.log(err))
                 )
             })
-        )
+        
 
-        .then(data => this.setState({
-            arrayFavs: data
-        }))
-
-        .catch(err => console.log(err))
-
-        Promise.all(
-            parseado.map(element => {
-                return(
-                    fetch(`https://api.themoviedb.org/3/tv/${element}?api_key=ec7d1aeea6d41d212821b84124febd74`)
-                    .then(response => response.json())
-                    .then (data => data)
-                )
-            })
-        )
-
-        .then(data => this.setState({
-            arrayFavs: data
-        }))
-
-        .catch(err => console.log(err))
 
         }
 
     }
 
+    
+
     render () {
+
+        console.log(this.state.dataPeliculas)
+        console.log(this.state.dataSeries)
+
         return (
         <React.Fragment>
 
