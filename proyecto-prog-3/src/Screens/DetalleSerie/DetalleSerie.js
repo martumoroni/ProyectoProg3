@@ -17,10 +17,14 @@ class DetalleSerie extends Component {
     componentDidMount() {
         fetch(`https://api.themoviedb.org/3/tv/${this.state.id}?api_key=c037da6882c3b5641c3425b1e80847bb`)
             .then(res => res.json())
-            .then(data => this.setState({
+            .then(data => {
+                this.setState({
                 datosSerie: data,
                 genres: data.genres[0].name,
-            }))
+            })
+            console.log('Data del detalle de serie', data)
+        }
+            )
             .catch(err => console.log(err))
 
     }
@@ -36,9 +40,9 @@ class DetalleSerie extends Component {
                 <div>
                 <img src={`https://image.tmdb.org/t/p/w500/${this.state.datosSerie.poster_path}`} alt="" />
                 <div>
-                    <h2 className="title-detail">{this.state.datosSerie.title}</h2>
+                    <h2 className="title-detail">{this.state.datosSerie.name}</h2>
                     <p>{this.state.datosSerie.overview}</p>
-                    <p>Fecha de estreno (AA-MM-DD): {this.state.datosSerie.release_date}</p>
+                    <p>Fecha de estreno (AA-MM-DD): {this.state.datosSerie.last_air_date}</p>
                     <p>Califiación: {Math.round(this.state.datosSerie.vote_average * 100) / 100}</p>
                     <p>Generos: {this.state.genres}</p>
                 
