@@ -37,9 +37,9 @@ class DetalleSerie extends Component {
             
             <article className='detail-card'>
                 {this.state.datosPelicula === '' ? <h3>Cargando...</h3> :  
-                <div>
-                <img src={`https://image.tmdb.org/t/p/w500/${this.state.datosSerie.poster_path}`} alt="" />
-                <div>
+                <div className='todo'>
+                <img className='imagen' src={`https://image.tmdb.org/t/p/w500/${this.state.datosSerie.poster_path}`} alt="" />
+                <div className='detail-serie'>
                     <h2 className="title-detail">{this.state.datosSerie.name}</h2>
                     <p>{this.state.datosSerie.overview}</p>
                     <p>Fecha de estreno (AA-MM-DD): {this.state.datosSerie.last_air_date}</p>
