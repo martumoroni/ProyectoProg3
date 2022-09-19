@@ -1,0 +1,19 @@
+.imagen{
+    width: 300px;
+    margin-left: 40px;
+    margin-top: 20px;
+    margin-bottom: 60px;
+    margin-right: 20px;
+}
+
+.todo{
+    display: flex;
+    display: inline-flex;
+    text-align: center;
+    margin-right: 60px;
+}
+
+.detail-peli{
+    margin-top: 110px;
+    margin-left: 20px;
+}

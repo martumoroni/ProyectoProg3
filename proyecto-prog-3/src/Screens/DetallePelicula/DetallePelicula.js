@@ -35,17 +35,17 @@ class DetallePelicula extends Component {
             
             <article className='detail-card'>
                 {this.state.datosPelicula === '' ? <h3>Cargando...</h3> : 
-                <div>
-                <img src={`https://image.tmdb.org/t/p/w500/${this.state.datosPelicula.poster_path}`} alt="" />
-                <div>
-                    <h2 className="title-detail">{this.state.datosPelicula.title}</h2>
+                <div className='todo'>
+                <img className='imagen' src={`https://image.tmdb.org/t/p/w500/${this.state.datosPelicula.poster_path}`} alt="" />
+            <div className='detail-peli'>
+                    <h2>{this.state.datosPelicula.title}</h2>
                     <p>{this.state.datosPelicula.overview}</p>
                     <p>Fecha de estreno (AA-MM-DD): {this.state.datosPelicula.release_date}</p>
                     <p>Califiación: {Math.round(this.state.datosPelicula.vote_average * 100) / 100}</p>
                     <p>Duración: {this.state.datosPelicula.runtime} minutos</p>
                     <p>Generos: {this.state.genres}</p>
 
-                </div>
+            </div>
                 </div>}
                
 
